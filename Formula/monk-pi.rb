@@ -1,14 +1,14 @@
 class MonkPi < Formula
   desc "Zero-config harness for running Pi Coding Agent with Monk API (monk.party)"
   homepage "https://github.com/yaoleifly/monk-pi"
-  url "https://registry.npmjs.org/monk-pi/-/monk-pi-0.10.2.tgz"
-  sha256 "e610c8beae6d9702cf992397eb3e94e36e7a6272c308cb81924f9cfd6201091c"
+  url "https://registry.npmjs.org/monk-pi/-/monk-pi-0.13.0.tgz"
+  sha256 "1eb1ae8c04bbebfa95f14790cf3d2f9ff305c624a996551e7d01364174866e2b"
   license "MIT"
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
